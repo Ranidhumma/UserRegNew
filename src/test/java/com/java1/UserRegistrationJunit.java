@@ -24,7 +24,7 @@ public class UserRegistrationJunit {
 	@Test
 	public void testLastName() {
 
-		boolean result = j.LastName("dhummA");
+		boolean result = j.LastName("dhummaA");
 		// assertTrue(result);
 		assertEquals(true, result);
 	}
