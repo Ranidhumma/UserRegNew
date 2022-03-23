@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
+import com.java.InvalidException;
 import com.java.UserRegistration;
 
 public class UserRegistrationJunit {
@@ -11,30 +12,32 @@ public class UserRegistrationJunit {
 
 	/*
 	 * this Test case is used to check our first name passes given regex pattern
+	 * 
+	 * @throws InputInvalidException - throw the custom exception
 	 */
-	@Test
-	public void testFirstName() {
 
-		boolean result = j.FirstName("Ranii");
-		// assertTrue(result);
-		assertEquals(true, result);
+	@Test
+	public void testOfFirstName() throws InvalidException {
+
+		boolean result = j.testFirstName("Rani");
+
+		// assertEquals(true, result);
+
 	}
 
 	/* this Test case is used to check our last name passes given regex pattern */
 	@Test
-	public void testLastName() {
+	public void testLastName() throws InvalidException {
 
-		boolean result = j.LastName("dhummaA");
-		// assertTrue(result);
+		boolean result = j.LastName("dhummA");
 		assertEquals(true, result);
 	}
 
 	/* this Test case is used to check our email passes given regex pattern */
 	@Test
-	public void testEmail() {
+	public void testEmail() throws InvalidException {
 
 		boolean result = j.Email("xyz.abc@bl.co.in");
-		// assertTrue(result);
 		assertEquals(true, result);
 	}
 
@@ -43,10 +46,9 @@ public class UserRegistrationJunit {
 	 */
 
 	@Test
-	public void testMobileNum() {
+	public void testMobileNum() throws InvalidException {
 
 		boolean result = j.MobileNum("91 9922554488");
-		// assertTrue(result);
 		assertEquals(true, result);
 	}
 
@@ -55,10 +57,10 @@ public class UserRegistrationJunit {
 	 * regex pattern /* Test case used to test atleast one Special char
 	 */
 	@Test
-	public void testPassword() {
+	public void testPassword() throws InvalidException {
 
 		boolean result = j.PasswordAtleastOneSpecialChar("xyx@123A");
-		// assertTrue(result);
 		assertEquals(true, result);
 	}
+
 }
